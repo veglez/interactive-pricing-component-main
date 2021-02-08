@@ -11,10 +11,12 @@ block content
             .card__section
                 h3.card__title
                     span.card__viewers
+                    | 
                     | Pageviews
-                input.card__range(id='myrange',type="range", min="8", max="36", value="8", step="4")
+                input.card__range(id='myrange',type="range", min="0", max="4", value="0", step="1")
                 .card__monthly-price
-                    span.card__price $
+                    span.card__price.
+                        
                     | /month
                 .card__billing-type
                     | Monthly Billing

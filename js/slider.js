@@ -5,15 +5,18 @@ let amount_viewers = document.querySelector('.card__viewers');
 let price = document.querySelector('.card__price');
 
 let valores ={
-'$8' : '10K',
-'$12': '50K',
-'$16': '100K',
-'$24': '500k',
-'$36': '1M'
+'$8.00' : '10K',
+'$12.00': '50K',
+'$16.00': '100K',
+'$24.00': '500k',
+'$36.00': '1M'
 }
 
+prices = ['$8.00','$12.00','$16.00','$24.00','$36.00']
+
 slider_range.addEventListener('input',function () {setBackground(this)},false);
-slider_range.addEventListener('change',function () {putPrices(this)},false);
+slider_range.addEventListener('input',function () {putPrices(this)},false);
+slider_range.addEventListener('onpageshow',function () {putPrices(this)},false);
 input_checkbox.addEventListener('change', function(){
     if (this.checked) {
         switch_label.style.background =  'hsl(174, 77%, 80%)'
@@ -23,16 +26,17 @@ input_checkbox.addEventListener('change', function(){
 }, false)
 
 function putPrices(slider){
-    let valor = slider.value;
-    if ('$'+valor in valores){
-        amount_viewers.textContent = valores['$'+valor]
-        price.innerHTML = '$'+valor
+    let valor = prices[slider.value];
+    console.log(valor)
+    if (valor in valores){
+        amount_viewers.textContent = valores[valor]
+        price.innerHTML = valor
     }
 }
 
 function setBackground (slider){
     var gradValue = Math.round(((slider.value-slider.min)/slider.step)*100/((slider.max - slider.min)/slider.step));
-    console.log(gradValue)
+    // console.log(gradValue)
     var grad = 'linear-gradient(90deg, hsl(174, 77%, 80%) ' + gradValue + '%,hsl(224, 65%, 95%) ' + (gradValue+1) + '%)';
     slider.style.background= grad;
     // console.log(grad)
