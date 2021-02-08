@@ -10,7 +10,6 @@ prices = [8.00,12.00,16.00,24.00,36.00]
 
 slider_range.addEventListener('input',function () {setBackground(this)},false);
 slider_range.addEventListener('input',function () {putPrices(this)},false);
-slider_range.addEventListener('onpageshow',function () {putPrices(this)},false);
 input_checkbox.addEventListener('change', function(){
     if (this.checked) {
         switch_label.style.background =  'hsl(174, 77%, 80%)'
@@ -38,7 +37,4 @@ function setBackground (slider){
     // console.log(grad)
 }
 
-/* 8  12 
-16 20 
-24 28 
-32 36 */
+putPrices(slider_range)
