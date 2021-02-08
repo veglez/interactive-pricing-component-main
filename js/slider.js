@@ -4,15 +4,9 @@ let input_checkbox = document.querySelector('.switch__checkbox');
 let amount_viewers = document.querySelector('.card__viewers');
 let price = document.querySelector('.card__price');
 
-let valores ={
-'$8.00' : '10K',
-'$12.00': '50K',
-'$16.00': '100K',
-'$24.00': '500k',
-'$36.00': '1M'
-}
+let viewers =['10K','50K','100K','500k','1M']
 
-prices = ['$8.00','$12.00','$16.00','$24.00','$36.00']
+prices = [8.00,12.00,16.00,24.00,36.00]
 
 slider_range.addEventListener('input',function () {setBackground(this)},false);
 slider_range.addEventListener('input',function () {putPrices(this)},false);
@@ -23,15 +17,17 @@ input_checkbox.addEventListener('change', function(){
     } else {
         switch_label.style.background =  'hsl(223, 50%, 87%)'
     }
+    putPrices(slider_range)
 }, false)
 
 function putPrices(slider){
     let valor = prices[slider.value];
-    console.log(valor)
-    if (valor in valores){
-        amount_viewers.textContent = valores[valor]
-        price.innerHTML = valor
+    let viewers_ammount = viewers[slider.value];
+    if (input_checkbox.checked){
+        valor = valor*0.75
     }
+    amount_viewers.textContent = viewers_ammount
+    price.innerHTML = '$'+valor+'.00'
 }
 
 function setBackground (slider){

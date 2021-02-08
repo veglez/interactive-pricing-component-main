@@ -45,10 +45,12 @@ $basefont: 'Manrope', sans-serif;
 $weight-normal: 600;
 $weight-bold: 800;
 
-// mixins
+//it's necesary for input range type in chrome
+$thumb-height: 40px; 
 
-%thumb {
-    height: 40px;
+// mixins
+@mixin thumb {
+    height: $thumb-height;
     width: 40px;
     border-radius: 25px;
     background: $strong-cyan url('../images/icon-slider.svg') no-repeat;
@@ -56,12 +58,30 @@ $weight-bold: 800;
     background-position-x: 45%;
     border: none;
     box-shadow: $strong-cyan 0 10px 20px;
-}
+};
 
-%track {
+@mixin track {
     width: 100%;
     height: 10px;
     cursor: pointer;
     transition: 0.2s;
     background:transparent
-}
+};
+
+@mixin alltrack() { 
+    &::-webkit-slider-runnable-track {-webkit-appearance: none; 
+        @include track;
+        height: $thumb-height;
+    };
+    &::-ms-track { @include track };
+    &::-moz-range-track { @include track };
+};
+
+@mixin allthumb($yoffset: -5px) { 
+    &::-webkit-slider-thumb { 
+        -webkit-appearance: none; 
+        @include thumb;
+    };
+    &::-ms-thumb { @include thumb};
+    &::-moz-range-thumb { @include thumb};
+};

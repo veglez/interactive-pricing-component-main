@@ -8,7 +8,7 @@ block content
                 br
                 | No credit card required. 
         section.card
-            .card__section
+            .card__section.card__section--top
                 h3.card__title
                     span.card__viewers
                     | 
@@ -21,9 +21,9 @@ block content
                 .card__billing-type
                     | Monthly Billing
                     label.switch(for="discount_checkbox")
-                        input.switch__checkbox(type="checkbox", id="discount_checkbox", checked)
+                        input.switch__checkbox(type="checkbox", id="discount_checkbox")
                         span.switch__slider
-                    | Yearly Billing #[span.card__discount-number -25%] #[span.card__discount-word discount]
+                    | Yearly Billing #[span.card__discount -25% #[span.card__discount-word discount]]
             .card__section.card__section--bottom
                 ul
                     li #[span.card__list-icon] Unlimited websites

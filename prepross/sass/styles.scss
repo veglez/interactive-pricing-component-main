@@ -8,6 +8,7 @@
 
 body{
   background: $very-pale-blue url('../images/bg-pattern.svg') no-repeat;
+  background-size: 100% 55% ;
 }
 
 .container {
@@ -117,25 +118,13 @@ body{
     background-color: $light-grayish-blue;
     border-radius: 5px;
     height: 10px;
+    -webkit-appearance: none;
     
-    &::-moz-range-thumb{
-      @extend %thumb;
-    }
-
-    &::-moz-range-track {
-      @extend %track;
-    }
-
-    &::-webkit-slider-runnable-track {
-      @extend %track;
-    }
-
-    &::-webkit-slider-thumb {
-      @extend %thumb;
-    }
+    @include alltrack;
+    @include allthumb;
 }
 
-  &__discount-number {
+  &__discount {
     padding: 2px 10px;
     border-radius: 25px;
     color: $light-red;
@@ -157,7 +146,7 @@ body{
   position: relative;
   display: inline-block;
   border-radius: 15px;
-  background-color: $soft-cyan;
+  background-color: $light-grayish-blue;
   transition: 0.5s;
 
   &__checkbox{
@@ -189,3 +178,45 @@ body{
     transform: translateX(22px);
   }
 } 
+
+@media screen and (min-width:1440px){
+  .card{
+    width: 40%;
+    margin: 0 auto;
+    &__section--top{
+      display: grid;
+      grid: "viewers viewers price price" 1fr
+            "slider slider slider slider" 1fr
+            "billing billing billing billing" 1fr / 1fr 1fr 1fr 1fr;
+      justify-items: center;
+    }
+    &__title{
+      grid-area: viewers;
+    }
+    &__range {
+      grid-area: slider ;
+    }
+    &__monthly-price{
+      grid-area: price;
+    }
+    &__billing-type{
+      grid-area: billing;
+    }
+    &__discount-word{
+      display: inline;
+    }
+  }
+}
+
+.attribution {
+  position: absolute;
+  width: 100%;
+  font-size: 10px ;
+  text-align: center;
+  background-color: #a9a9a9;
+  & a, & a:visited {
+    text-decoration: none;
+    color: $dark-desaturated-blue;
+    text-transform: uppercase;
+  }
+}
