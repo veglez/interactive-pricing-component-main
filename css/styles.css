@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fafbff url("../images/bg-pattern.svg") no-repeat;
+}
+
+.container {
+  width: 90%;
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  color: #858fad;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.header {
+  margin: 80px auto 50px auto;
+  padding: 10px;
+  position: relative;
+}
+.header::after {
+  content: " ";
+  min-height: 160px;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  position: absolute;
+  display: inline-block;
+  background: url("../images/pattern-circles.svg") center center no-repeat;
+  background-size: auto;
+}
+.header__title {
+  margin: 10px 0;
+  color: #293356;
+  font-size: 22.5px;
+  font-weight: 800;
+}
+.header p {
+  line-height: 30px;
+}
+
+.card {
+  min-height: 60vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #a5f3eb;
+  border-radius: 8px;
+}
+.card__section {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.card__section--bottom {
+  border-top: 2px solid #fafbff;
+}
+.card__section--bottom ul {
+  list-style: none;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.card__button {
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 25px;
+  color: #bdccff;
+  background-color: #293356;
+}
+.card__list-icon {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-image: url("../images/icon-check.svg");
+  background-size: cover;
+  margin: 0 10px 0 0;
+}
+.card__range {
+  width: 80%;
+  outline: none;
+  background-color: #cdd7ee;
+  border-radius: 5px;
+  height: 10px;
+}
+.card__range::-moz-range-thumb {
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
+  background: #10d5c2 url("../images/icon-slider.svg") no-repeat;
+  background-position-y: center;
+  background-position-x: 45%;
+  border: none;
+  box-shadow: #10d5c2 0 10px 20px;
+}
+.card__range::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+  background: transparent;
+}
+.card__discount-number {
+  padding: 3px 10px;
+  border-radius: 25px;
+  color: #ff8c66;
+  background-color: #feece7;
+}
+.card__discount-word {
+  display: none;
+}
+.card__billing-type {
+  margin: 10px 0;
+}
+
+.switch {
+  width: 50px;
+  height: 24px;
+  margin: 0 5px;
+  position: relative;
+  display: inline-block;
+  border-radius: 15px;
+  background-color: #a5f3eb;
+  transition: 0.5s;
+}
+.switch__checkbox {
+  visibility: hidden;
+}
+.switch__slider {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0;
+  right: 0;
+  transition: 0.5s;
+}
+.switch__slider::before {
+  content: "";
+  position: inherit;
+  top: 3px;
+  left: 4px;
+  width: 17px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: white;
+}
+.switch__checkbox:checked + .switch__slider {
+  transform: translateX(26px);
+}

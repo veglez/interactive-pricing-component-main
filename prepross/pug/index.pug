@@ -1,0 +1,30 @@
+extends ./layout.pug
+block content
+    .container
+        header.header
+            h1.header__title Simple, traffic-based pricing
+            p
+                | Sign-up for our 30-day trial. 
+                br
+                | No credit card required. 
+        section.card
+            .card__section
+                h3.card__title
+                    span.card__viewers
+                    | Pageviews
+                input.card__range(id='myrange',type="range", min="8", max="36", value="8", step="4")
+                .card__monthly-price
+                    span.card__price $
+                    | /month
+                .card__billing-type
+                    | Monthly Billing
+                    label.switch(for="discount_checkbox")
+                        input.switch__checkbox(type="checkbox", id="discount_checkbox", checked)
+                        span.switch__slider
+                    | Yearly Billing #[span.card__discount-number -25%] #[span.card__discount-word discount]
+            .card__section.card__section--bottom
+                ul
+                    li #[span.card__list-icon] Unlimited websites
+                    li #[span.card__list-icon] 100% data ownership
+                    li #[span.card__list-icon] Email reports
+                button.card__button Start my trial

@@ -1,56 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./phone.css">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  <header class="header">
-    <h1>Simple, traffic-based pricing</h1>
-    <h2>Sign-up for our 30-day trial. No credit card required. </h2>
-  </header>
-
-  <section class="card">
-    <header class="card__header">
-      <h3>100K Pageviews</h3>
-      <span class="price">$</span> /month
-      <label class="price-slider" for="prices"><input type="range" name="prices" min="1" max="20"></label>
-      <p class="card__type-payment">
-        Monthly Billing 
-        <label class="switch" for="payment">
-          <input type="checkbox" name="payment" >
-          <span class="slider"></span>
-        </label>
-        Yearly Billing <span class="card__discount">25% <span class="card__discount card__discount--word">discount</span></span>
-      </p>
-    </header>
-  
-    <div class="card__body">
-      <ul>
-        <li>Unlimited websites</li>
-        <li>100% data ownership</li>
-        <li>Email reports</li>
-      </ul>
-    
-      <button>Start my trial</button>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&amp;display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__title">Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. <br>No credit card required. </p>
+      </header>
+      <section class="card">
+        <div class="card__section">
+          <h3 class="card__title"><span class="card__viewers"></span>Pageviews</h3>
+          <input class="card__range" id="myrange" type="range" min="8" max="36" value="8" step="4">
+          <div class="card__monthly-price"><span class="card__price">$</span>/month</div>
+          <div class="card__billing-type">Monthly Billing
+            <label class="switch" for="discount_checkbox">
+              <input class="switch__checkbox" type="checkbox" id="discount_checkbox" checked><span class="switch__slider"></span>
+            </label>Yearly Billing <span class="card__discount-number">-25%</span> <span class="card__discount-word">discount</span>
+          </div>
+        </div>
+        <div class="card__section card__section--bottom">
+          <ul>
+            <li><span class="card__list-icon"></span> Unlimited websites</li>
+            <li><span class="card__list-icon"></span> 100% data ownership</li>
+            <li><span class="card__list-icon"></span> Email reports</li>
+          </ul>
+          <button class="card__button">Start my trial</button>
+        </div>
+      </section>
     </div>
-  </section>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Falta link Github</a>.
-  </div>
-</body>
+    <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+      Coded by <a href="#">Valentín Eduardo González Morales</a>
+    </div>
+  </body>
+  <script src="./js/slider.js"> </script>
 </html>
