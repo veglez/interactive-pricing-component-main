@@ -1,10 +1,10 @@
-let slider_range = document.querySelector('#myrange');
-let switch_label = document.querySelector('.switch');
-let input_checkbox = document.querySelector('.switch__checkbox');
-let amount_viewers = document.querySelector('.card__viewers');
-let price = document.querySelector('.card__price');
+const slider_range = document.querySelector('#myrange');
+const switch_label = document.querySelector('.switch');
+const input_checkbox = document.querySelector('.switch__checkbox');
+const amount_viewers = document.querySelector('.card__viewers');
+const price = document.querySelector('.card__price');
 
-let viewers =['10K','50K','100K','500k','1M']
+const viewers =['10K','50K','100K','500k','1M']
 
 prices = [8.00,12.00,16.00,24.00,36.00]
 
@@ -30,9 +30,9 @@ function putPrices(slider){
 }
 
 function setBackground (slider){
-    var gradValue = Math.round(((slider.value-slider.min)/slider.step)*100/((slider.max - slider.min)/slider.step));
+    let gradValue = Math.round(((slider.value-slider.min)/slider.step)*100/((slider.max - slider.min)/slider.step));
     // console.log(gradValue)
-    var grad = 'linear-gradient(90deg, hsl(174, 77%, 80%) ' + gradValue + '%,hsl(224, 65%, 95%) ' + (gradValue+1) + '%)';
+    let grad = 'linear-gradient(90deg, hsl(174, 77%, 80%) ' + gradValue + '%,hsl(224, 65%, 95%) ' + (gradValue+1) + '%)';
     slider.style.background= grad;
     // console.log(grad)
 }
